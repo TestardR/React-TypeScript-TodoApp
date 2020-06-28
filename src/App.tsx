@@ -3,7 +3,7 @@ import TodoList from './components/TodoList';
 import NewTodo from './components/NewTodo';
 import { ITodo } from './models/todo.model';
 
-const App: React.FC = () => {
+const App = () => {
   const [todos, setTodos] = useState<ITodo[]>([]);
 
   const todoAddHandler = (text: string) => {
@@ -20,7 +20,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
+    <div data-test='component-app'>
       <NewTodo onAddTodo={todoAddHandler} />
       <TodoList items={todos} onDeleteTodo={todoDeleteHandler} />
     </div>
